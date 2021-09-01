@@ -1,0 +1,31 @@
+<div class="jumbotron py-3">
+    <h1 class="display-4 text-center">Gerenciador de Responsáveis</h1>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <app-responsavel-detalhes-form></app-responsavel-detalhes-form>
+    </div>
+    <div class="col-md-6">
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Data de Nascimento</th>
+                    <th>CPF</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pd of service.list">
+                    <td (click)="populateForm(pd)">{{pd.responsavelId}}</td>
+                    <td (click)="populateForm(pd)">{{pd.nome}}</td>
+                    <td (click)="populateForm(pd)">{{pd.dataNascimento.substring(0, 10)}}</td>
+                    <td (click)="populateForm(pd)">{{pd.cpf}}</td>
+                    <td>
+                        <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.responsavelId)"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

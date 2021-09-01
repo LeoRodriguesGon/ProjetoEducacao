@@ -1,0 +1,43 @@
+<img src="assets/img/SED.png" alt="">
+
+<body>
+<div class="jumbotron py-3">
+  <h1 class="display-4 text-center">Portal da Educação</h1>
+</div>
+
+<br>
+
+<div class="container" >
+  <button class="btn btn-info btn-lg btn-block" type="button" (click)="shouldShowAlun = true" (click)="shouldShow = false" (click)="shouldShowResp = false" style="background-color: rgb(72, 163, 255);">Gerenciar Alunos</button>
+    <div id="ma" *ngIf="shouldShowAlun">
+      <button class="btn btn-info btn-lg btn-block"  type="button" (click)="shouldShowAlun = false" style="background-color: rgb(72, 163, 255);">Ocultar Gerenciador</button>
+    <app-aluno-detalhes></app-aluno-detalhes>
+    </div>
+</div>
+
+<br>
+
+<div class="container" >
+  <button class="btn btn-info btn-lg btn-block"  type="button" (click)="shouldShow = true" (click)="shouldShowAlun = false" (click)="shouldShowResp = false" style="background-color: rgb(72, 163, 255);">Gerenciar Escolas</button>
+    <div id="me" *ngIf="shouldShow">
+      <button class="btn btn-info btn-lg btn-block" type="button" (click)="shouldShow = false" style="background-color: rgb(72, 163, 255);">Ocultar Gerenciador</button>
+    <app-escola-detalhes></app-escola-detalhes>
+    </div>
+</div>
+
+<br>
+
+<div class="container" >
+  <button class="btn btn-info btn-lg btn-block" type="button" (click)="shouldShowResp = true" (click)="shouldShow = false" (click)="shouldShowAlun = false" style="background-color: rgb(72, 163, 255);">Gerenciar Responsaveis</button>
+    <div id="mi" *ngIf="shouldShowResp">
+      <button class="btn btn-info btn-lg btn-block" type="button" (click)="shouldShowResp = false" style="background-color: rgb(72, 163, 255);">Ocultar Gerenciador</button>
+    <app-responsavel-detalhes></app-responsavel-detalhes>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+</body>

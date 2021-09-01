@@ -1,0 +1,13 @@
+<form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)"> 
+    <input type="hidden" name="escolaId"
+    [value]="service.formData.escolaId" />
+    <div class="form-group">
+        <label >Nome da Escola</label>
+        <input class="form-control form-control-lg" placeholder="Ex: Joaquim Murtinho" 
+        name="nome" #nome="ngModel" [(ngModel)]="service.formData.nome" required maxlength="35" minlength="3"
+        [class.invalid]="nome.invalid && nome.touched">
+    </div>
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" style="background-color: rgb(89, 182, 86);" type="submit" [disabled]="form.invalid">Cadastrar</button>
+    </div>
+</form>

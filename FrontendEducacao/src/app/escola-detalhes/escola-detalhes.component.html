@@ -1,0 +1,28 @@
+<div class="jumbotron py-3">
+    <h1 class="display-4 text-center">Gerenciador de Escolas</h1>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <app-escola-detalhes-form></app-escola-detalhes-form>
+    </div>
+    <div class="col-md-6">
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pd of service.list">
+                    <td (click)="populateForm(pd)">{{pd.escolaId}}</td>
+                    <td (click)="populateForm(pd)">{{pd.nome}}</td>
+                    <td>
+                        <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.escolaId)"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)"> 
+    <input type="hidden" name="alunoId"
+    [value]="service.formData.alunoId" />
+    <div class="form-group">
+        <label >Nome do Aluno</label>
+        <input class="form-control form-control-lg" placeholder="Insira o Nome Completo" 
+        name="nome" #nome="ngModel" [(ngModel)]="service.formData.nome" required maxlength="200" minlength="3"
+        [class.invalid]="nome.invalid && nome.touched">
+    </div>
+
+    <div class="form-group">
+        <label >Data de Nascimento</label>
+        <input class="form-control form-control-lg" placeholder="Insira Ano-Mês-Dia" 
+        name="dataNascimento" #nome="ngModel" [(ngModel)]="service.formData.dataNascimento" required maxlength="10" minlength="10"
+        >
+    </div>
+
+    <div class="form-group">
+        <label >Certidão de Nascimento</label>
+        <input class="form-control form-control-lg" placeholder="Insira o Numero da Certidão" 
+        name="numeroCertidaoNova " #nome="ngModel" [(ngModel)]="service.formData.numeroCertidaoNova">
+    </div>
+
+    <div class="form-group">
+        <label >CPF</label>
+        <input class="form-control form-control-lg" placeholder="Insira o CPF" 
+        name="cpf" #nome="ngModel" [(ngModel)]="service.formData.cpf">
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label >ID do Responsável</label>
+            <input class="form-control form-control-lg" placeholder="Insira o código do Responsável" 
+            name="responsavelId" #nome="ngModel" [(ngModel)]="service.formData.responsavelId">
+        </div>
+
+        <div class="form-group col-md-6">
+            <label >ID da Escola</label>
+            <input class="form-control form-control-lg" placeholder="Insira o código da Escola" 
+            name="escolaId" #nome="ngModel" [(ngModel)]="service.formData.escolaId"
+            >
+        </div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" style="background-color: rgb(89, 182, 86);" type="submit" [disabled]="form.invalid">Cadastrar</button>
+    </div>
+</form>
+
